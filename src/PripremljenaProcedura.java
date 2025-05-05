@@ -15,6 +15,13 @@ System.out.println("Ime kupca: " + imeKupca);
     }
 
     public static String dohvatiKupca(int id) {
+//      KOD ZA BAZU:
+//        CREATE PROC DohvatiImeKupca @kupacID INT, @kupacIme NVARCHAR(100) OUTPUT
+//                AS
+//        BEGIN
+//        SELECT @kupacIme=Ime from Kupac WHERE IDKupac=@kupacID;
+//        END
+
         try(Connection connection = createDataSource().getConnection()) {
             System.out.println("Uspješno ste spojeni na bazu podataka");
 
